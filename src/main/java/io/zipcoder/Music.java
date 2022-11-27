@@ -19,9 +19,6 @@ public class Music {
                 buttonForwardCount = i - startIndex;
                 buttonBackwardCount = startIndex - i + playList.length;
                 loopForwardCount = i - startIndex + playList.length;
-                System.out.println(loopForwardCount);
-                System.out.println(buttonBackwardCount);
-                System.out.println(buttonForwardCount);
             }
         }
         if (abs(buttonBackwardCount) >= abs(buttonForwardCount) && abs(loopForwardCount) > abs(buttonForwardCount)) return abs(buttonForwardCount);

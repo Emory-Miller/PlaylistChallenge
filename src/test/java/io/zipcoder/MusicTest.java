@@ -77,4 +77,16 @@ public class MusicTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void selectionTest7(){
+
+        String[] playlist = {"wheniseeyouagain","borntorun","nothingelsematters","cecelia","dancinginthedark","rio","heartbreaker","liveoak"};
+        Music music = new Music(playlist);
+        Integer startingIndex = 1;
+        String selection = "liveoak";
+        Integer expected = 2;
+        Integer actual = music.selection(startingIndex, selection);
+        Assert.assertEquals(expected, actual);
+    }
+
 }
