@@ -28,4 +28,40 @@ public class MusicTest {
         Integer actual = music.selection(startingIndex, selection);
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void selectionTest3(){
+
+        String[] playlist = {"wheniseeyouagain","borntorun","nothingelsematters","cecelia","dancinginthedark","rio","heartbreaker","liveoak"};
+        Music music = new Music(playlist);
+        Integer startingIndex = 1;
+        String selection = "cecelia";
+        Integer expected = 2;
+        Integer actual = music.selection(startingIndex, selection);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void selectionTest4(){
+
+        String[] playlist = {"wheniseeyouagain","borntorun","nothingelsematters","cecelia","dancinginthedark","rio","heartbreaker","liveoak"};
+        Music music = new Music(playlist);
+        Integer startingIndex = 4;
+        String selection = "cecelia";
+        Integer expected = 1;
+        Integer actual = music.selection(startingIndex, selection);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void selectionTest5(){
+
+        String[] playlist = {"wheniseeyouagain","borntorun","nothingelsematters","cecelia","dancinginthedark","rio","heartbreaker","liveoak"};
+        Music music = new Music(playlist);
+        Integer startingIndex = 4;
+        String selection = "borntorun";
+        Integer expected = 3;
+        Integer actual = music.selection(startingIndex, selection);
+        Assert.assertEquals(expected, actual);
+    }
 }
