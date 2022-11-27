@@ -13,13 +13,21 @@ public class Music {
     public Integer selection(Integer startIndex, String selection){
         Integer buttonForwardCount = 0;
         Integer buttonBackwardCount = 0;
+        Integer loopForwardCount = 0;
         for (int i = 0; i < playList.length; i++){
             if (playList[i].equals(selection)){
-                buttonForwardCount = i - startIndex ;
+                buttonForwardCount = i - startIndex;
                 buttonBackwardCount = startIndex - i + playList.length;
+                loopForwardCount = i - startIndex + playList.length;
+                System.out.println(loopForwardCount);
+                System.out.println(buttonBackwardCount);
+                System.out.println(buttonForwardCount);
             }
         }
-        if (buttonBackwardCount > buttonForwardCount) return abs(buttonForwardCount);
-        else return abs(buttonBackwardCount);
+        if (abs(buttonBackwardCount) >= abs(buttonForwardCount) && abs(loopForwardCount) > abs(buttonForwardCount)) return abs(buttonForwardCount);
+        else if (abs(buttonForwardCount) > abs(buttonBackwardCount) && abs(loopForwardCount) > abs(buttonBackwardCount)) return abs(buttonBackwardCount);
+        else if (abs(buttonForwardCount) > abs(loopForwardCount) && abs(buttonBackwardCount) > abs(loopForwardCount)) return abs(loopForwardCount);
+        else return 0;
     }
+
 }
